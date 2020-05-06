@@ -1,16 +1,4 @@
-class User:
-    def __init__(self, name, account, deposit):
-        self.name = name
-        self.account = account
-        self.deposit = deposit
-
-
-    def print_info(self):
-        print("계좌번호 : ", self.account, "/ 이름 : ", self.name, " / 잔액 : ", self.deposit, "원")
-
-def run():
-    yang = User('양진이', '123456', '30000')
-    userlist.append(yang)
+import User.Userac as user
 
 if __name__=="__main__":
     userlist=[]
@@ -24,7 +12,7 @@ if __name__=="__main__":
             accnum = input("계좌번호 : ")
             name = input("이름 : ")
             depo = input("예금 : ")
-            accnum = User(name, accnum, depo)
+            accnum = user.Userac(name, accnum, depo)
             userlist.append(accnum)
             print("##계좌개설을 완료하였습니다##\n", "==================")
         elif(num == 2):
