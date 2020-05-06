@@ -24,10 +24,14 @@ if __name__=="__main__":
         elif (num == 2):
             print("======입금하기======")
             accnum = input("입금하실 계좌번호를 입력해주세요 : ")
-            print("계좌이름 : {0}\n계좌잔고 : {1}" .format(name, depo))
-            money1 = input("입금하실 금액을 입력해주세요 : ")
-            depo += money1
-            print("##계좌잔고 : %d 원##" %depo)
+            for i in range(len(userlist)) :
+                if userlist[i].account == accnum :
+                    ind = i
+            userlist[ind].print_deposit()
+            userlist[ind].print_name()
+            money1 = int(input("입금하실 금액을 입력해주세요 : "))
+            userlist[ind].deposit = userlist[ind].deposit + money1
+            print("##계좌잔고 : %d 원##" %userlist[ind].deposit)
             print("##입금이 완료되었습니다##\n", "====================")
 
         elif (num == 3):
