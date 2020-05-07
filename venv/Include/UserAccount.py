@@ -23,9 +23,9 @@ if __name__=="__main__":
 
         elif (num == 2):
             print("======입금하기======")
-            accnum = input("입금하실 계좌번호를 입력해주세요 : ")
+            accnum = int(input("입금하실 계좌번호를 입력해주세요 : "))
             for i in range(len(userlist)) :
-                if userlist[i].account == accnum :
+                if userlist[i].user_account() == accnum :
                     ind = i
             userlist[ind].print_balance()
             userlist[ind].print_name()
