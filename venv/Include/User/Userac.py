@@ -10,7 +10,11 @@ class Userac:
     
     def user_account(self):
         return self.account
-    def print_name(self):
-        print("계좌이름 : ", self.name)
+    def user_balance(self):
+        return self.balance
+    def user_name(self):
+        return self.name
     def print_balance(self):
         print("계좌잔고 : ", self.balance)
+    def print_name(self):
+        print("계좌잔고 : ", self.name)
