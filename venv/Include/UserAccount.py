@@ -24,15 +24,19 @@ if __name__=="__main__":
         elif (num == 2):
             print("======입금하기======")
             accnum = int(input("입금하실 계좌번호를 입력해주세요 : "))
+            ind = 0
             for i in range(len(userlist)) :
-                if userlist[i].user_account() == accnum :
-                    ind = i
-            userlist[ind].print_balance()
-            userlist[ind].print_name()
-            money1 = int(input("입금하실 금액을 입력해주세요 : "))
-            userlist[ind].balance = userlist[ind].balance + money1
-            print("##계좌잔고 : %d 원##" %userlist[ind].balance)
-            print("##입금이 완료되었습니다##\n", "====================")
+               if userlist[i].user_account() == accnum :
+                  ind = i
+            if ind != 0 :
+               userlist[ind].print_balance()
+               userlist[ind].print_name()
+               money1 = int(input("입금하실 금액을 입력해주세요 : "))
+               userlist[ind].balance = userlist[ind].balance + money1
+               print("##계좌잔고 : %d 원##" %userlist[ind].balance)
+               print("##입금이 완료되었습니다##\n", "====================")
+            else :
+                print("계좌가 존재하지 않습니다.")
 
         elif (num == 3):
             print("======출금하기======")
